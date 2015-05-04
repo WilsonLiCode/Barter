@@ -1,0 +1,23 @@
+html {
+  overflow-y: scroll;
+}
+
+div.stars .glyphicon {
+    font-size: 45px;
+}
+
+.glyphicon-star, .glyphicon-star-empty {
+    color:gold;
+}
+
+.hiddenform{
+    display:none;
+}
+
+body {
+	background-image: url("cream_dust.png");
+    background-repeat: repeat;
+}
+.tags {
+    text-transform: capitalize;
+}

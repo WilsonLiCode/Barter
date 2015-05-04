@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+    <h1>Tags</h1>
+    <hr/>
+     <ul class="list-unstyled tags">
+        {% for object in object_list %}
+
+           <li> <a class="btn btn-info btn-xs" href={% url "barter:favor_list_tagged" object.slug %}>{{ object.slug }}</a> <span class="badge">{{ object.favor_set.count }}</span></li>
+
+        {% endfor %}
+      </ul>
+
+    {% if is_paginated %}
+        <div class="text-center">
+            <nav>
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li>
+                            <a href="/tags?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {%  endif %}
+                    <li><a>{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+                    {% if page_obj.has_next %}
+                        <li>
+                            <a href="/tags?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,5 @@
+*.pyc
+__pycache__/*.pyc
+barter/__pycache__/*.pyc
+barter_site/__pycache__/*.pyc
+.idea/*.*

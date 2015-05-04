@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <h1>Login</h1>
+    <hr/>
+    <form method="post" action="{% url 'barter:login' %}" class="form-inline">
+        {% csrf_token %}
+        {% bootstrap_form form layout='inline' %}
+
+        {% buttons submit='OK' reset="Cancel" layout='inline' %}{% endbuttons %}
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <br/>
+    <a href="/register">Don't have an account? Register for one!</a>
+{% endblock %}
