@@ -1,3 +1,3 @@
-# barter_site
+# Barter Web Application
 
-barter barter barter barter barter barter barter barter barter barter barter barter barter barter barter 
+This application is used to facilitate the exchange of favors among users.
